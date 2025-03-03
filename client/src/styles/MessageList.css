@@ -1,0 +1,49 @@
+.messages {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #f0f2f5;
+}
+
+.message {
+  margin-bottom: 12px;
+  clear: both;
+}
+
+.message p {
+  padding: 12px;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  max-width: 65%;
+  word-wrap: break-word;
+}
+
+.message.received p {
+  background-color: #fff;
+  float: left;
+}
+
+.message.sent p {
+  background-color: #dcf8c6;
+  float: right;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  color: #8696a0;
+  margin-top: 4px;
+  display: block;
+  clear: both;
+}
+
+.message.received .timestamp {
+  float: left;
+  margin-left: 8px;
+}
+
+.message.sent .timestamp {
+  float: right;
+  margin-right: 8px;
+}
+

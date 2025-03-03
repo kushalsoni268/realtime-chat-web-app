@@ -1,0 +1,71 @@
+.chat-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  margin-bottom: 10px;
+}
+
+.header-title {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-left: 12px;
+}
+
+.active-chat {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.contact-name {
+  margin-left: 12px;
+  font-weight: 500;
+  flex: 1;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.call-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #075e54;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .chat-header {
+    padding: 0;
+  }
+
+  .header-content {
+    margin-bottom: 0;
+  }
+
+  .active-chat {
+    padding: 16px;
+  }
+}
+

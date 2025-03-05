@@ -78,6 +78,6 @@ npm start
 
    You can register a new account or use one of the seeded accounts to log in:
 
-- Username: john_doe, Password: password123
-- Username: jane_smith, Password: password123
-- Username: bob_johnson, Password: password123
+   - Username: john_doe, Password: password123
+   - Username: jane_smith, Password: password123
+   - Username: bob_johnson, Password: password123

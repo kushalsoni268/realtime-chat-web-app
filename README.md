@@ -74,9 +74,9 @@ npm start
 
 3. Access the application
 
-Open your browser and navigate to http://localhost:3000.
+   Open your browser and navigate to http://localhost:3000.
 
-You can register a new account or use one of the seeded accounts to log in:
+   You can register a new account or use one of the seeded accounts to log in:
 
 - Username: john_doe, Password: password123
 - Username: jane_smith, Password: password123

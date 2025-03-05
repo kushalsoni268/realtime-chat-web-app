@@ -29,9 +29,24 @@
   font-weight: 600;
 }
 
+.mobile-menu-actions {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f2f5;
+}
+
 .mobile-chat-list {
   overflow-y: auto;
   flex: 1;
+}
+
+.no-contacts {
+  padding: 24px 16px;
+  text-align: center;
+  color: #666;
+}
+
+.no-contacts p {
+  margin-bottom: 8px;
 }
 
 .mobile-menu-footer {

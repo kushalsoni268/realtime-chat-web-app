@@ -3,40 +3,53 @@
 import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import Login from "./components/Login"
+import Register from "./components/Register"
 import Chat from "./components/Chat"
 import "./App.css"
+import { AuthProvider } from "./context/AuthContext"
 
 function App() {
-  const [user, setUser] = useState(null)
-
-  useEffect(() => {
-    // Check if user is stored in localStorage
-    const storedUser = localStorage.getItem("chatUser")
-    if (storedUser) {
-      setUser(JSON.parse(storedUser))
-    }
-  }, [])
-
-  const handleLogin = (userData) => {
-    setUser(userData)
-    localStorage.setItem("chatUser", JSON.stringify(userData))
-  }
-
-  const handleLogout = () => {
-    setUser(null)
-    localStorage.removeItem("chatUser")
-  }
-
   return (
     <Router>
-      <div className="app">
-        <Routes>
-          <Route path="/login" element={user ? <Navigate to="/" /> : <Login onLogin={handleLogin} />} />
-          <Route path="/" element={user ? <Chat user={user} onLogout={handleLogout} /> : <Navigate to="/login" />} />
-        </Routes>
-      </div>
+      <AuthProvider>
+        <div className="app">
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <Chat />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </div>
+      </AuthProvider>
     </Router>
   )
+}
+
+// Protected route component
+function ProtectedRoute({ children }) {
+  const [loading, setLoading] = useState(true)
+  const [authenticated, setAuthenticated] = useState(false)
+
+  useEffect(() => {
+    // Check if user is authenticated
+    const token = localStorage.getItem("token")
+    if (token) {
+      setAuthenticated(true)
+    }
+    setLoading(false)
+  }, [])
+
+  if (loading) {
+    return <div className="loading">Loading...</div>
+  }
+
+  return authenticated ? children : <Navigate to="/login" />
 }
 
 export default App
